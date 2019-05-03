@@ -1,4 +1,17 @@
-[
+const mongoose     = require('mongoose');
+const Movie = require("../models/Movie");
+mongoose
+  .connect('mongodb://localhost/React-Movies', {useNewUrlParser: true})
+  .then(x => {
+    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+  })
+  .catch(err => {
+    console.error('Error connecting to mongo', err)
+  });
+
+
+
+  const movies = [
   {
     title: "The Shawshank Redemption",
     year: 1994,
@@ -91,3 +104,5 @@
   }
   
 ]
+
+Movie.insertMany(movies)
