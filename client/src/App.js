@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import { Switch, Route } from "react-router-dom";
 import Home from './components/Home/Home'
+import One from './components/Home/One'
+
 
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
         <Route exact path="/one/:id"/>
         <Route exact path="/new"/>
         <Route exact path="/update"/>
+        <Route exact path="/one" component={One}/>
+
       </Switch>
     </div>
   );

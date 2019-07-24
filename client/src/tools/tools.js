@@ -5,7 +5,7 @@ import axios from "axios";
 class AuthService {
   constructor() {
     this.service = axios.create({
-      baseURL:`http://localhost:5000/`,
+      baseURL:`http://localhost:5000`,
       withCredentials: true
     })
     
@@ -17,6 +17,13 @@ class AuthService {
     .then((response) => {
       return response.data})
   }
+
+  oneMovie = () => {
+    return this.service.get('/one')
+    .then((response) => {
+      return response.data})
+  }
+
 
 }
 export default AuthService;

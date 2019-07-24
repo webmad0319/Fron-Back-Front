@@ -12,4 +12,14 @@ router.get('/all', (req, res, next) => {
   })
 });
 
+router.get('/one', (req, res, next) => {
+  Movie.findOne({}).then(data => {
+    res.json({data});
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+});
+
+
 module.exports = router;
