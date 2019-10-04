@@ -20,8 +20,8 @@ export default class One extends Component {
   }
 
   render() {
-    console.log(this.state)
-    if(this.state.data){
+    console.log(!!this.state.data)
+    if(!!this.state.data){
       return (
         <div>
               <h1>{this.state.data.title}</h1>
